@@ -1,5 +1,5 @@
 --- # This is a structural YAML to install HTTPD on CENTOS
-- hosts: CENTOS
+- hosts: centos 
   remote_user: dabbill
   become: yes
   become_method: sudo
