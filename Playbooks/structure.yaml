@@ -1,0 +1,16 @@
+--- # This is a structural YAML to install HTTPD on CENTOS
+- hosts: CENTOS
+  remote_user: dabbill
+  become: yes
+  become_method: sudo
+  connection: ssh
+  gather_facts: yes
+  vars:
+    username: myuser
+  tasks:
+  - name: Install HTTPD server on CentOS 7 Nodes
+    yum:
+      name: httpd
+      state: latest
+    notify:
+    - startservice
